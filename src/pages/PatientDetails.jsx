@@ -14,7 +14,7 @@ function PatientDetail() {
 
   useEffect(() => {
     if (patient) {
-      fetch(`http://localhost:3000/prior-authorization-check/${patient._id}`)
+      fetch(`${import.meta.env.VITE_SERVER_URL}/prior-authorization-check/${patient._id}`)
         .then(response => response.json())
         .then(data => {
           if (data) {

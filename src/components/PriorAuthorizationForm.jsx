@@ -13,7 +13,7 @@ function PriorAuthorizationForm({patientId, name}) {
     console.log('Form submitted:', data);
     const formData = {...data, patientId}
     try {
-        const response = await fetch(`http://localhost:3000/prior-authorization`,{
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/prior-authorization`,{
             method : 'POST',
             headers : {
                 'Content-Type' : 'application/json'

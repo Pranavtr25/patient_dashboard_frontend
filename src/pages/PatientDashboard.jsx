@@ -14,7 +14,7 @@ const PatientDashboard = () => {
   }, [currentPage]);
 
   const fetchPatients = (page) => {
-    fetch(`http://localhost:3000/patients-list?page=${page}&limit=6`)  
+    fetch(`${import.meta.env.VITE_SERVER_URL}/patients-list?page=${page}&limit=6`)  
       .then(response => response.json())
       .then(data => {
         setPatients(data.patients);

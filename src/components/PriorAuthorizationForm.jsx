@@ -7,10 +7,8 @@ function PriorAuthorizationForm({patientId, name}) {
 
   const navigate = useNavigate()
 
-  console.log(`id : ${patientId}, name : ${name}`)
 
   const onSubmit = async (data) => {
-    console.log('Form submitted:', data);
     const formData = {...data, patientId}
     try {
         const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/prior-authorization`,{
@@ -26,7 +24,6 @@ function PriorAuthorizationForm({patientId, name}) {
         }
 
         const result = await response.json();
-        console.log(result);
 
         alert('authorization request submitted successfully')
 

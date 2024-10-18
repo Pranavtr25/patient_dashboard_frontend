@@ -6,14 +6,12 @@ const AuthorizationList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch the list of authorization requests from the backend
     const fetchRequests = async () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/authorization-list`);
         if (!response.ok) {
           throw new Error('error in response');
         }
-        console.log(response)
         const data = await response.json();
         setRequests(data); 
       } catch (err) {

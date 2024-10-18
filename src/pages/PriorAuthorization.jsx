@@ -6,8 +6,6 @@ import { useLocation } from 'react-router-dom'
 const PriorAuthorization = () => {
     const {state} = useLocation()
     const {id, name} = state || {}
-    console.log(id)
-    console.log(name)
   return (
     <>
         <div>

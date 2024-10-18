@@ -8,7 +8,6 @@ function PatientDetail() {
   const { patient } = state || {};
   const navigate = useNavigate();
 
-  console.log(patient)
 
   const [authorizationStatus, setAuthorizationStatus] = useState(null);
 
@@ -18,8 +17,6 @@ function PatientDetail() {
         .then(response => response.json())
         .then(data => {
           if (data) {
-            console.log(data)
-            console.log(11)
             setAuthorizationStatus(data.status); // If data exists, set the status
           }
         })
@@ -27,7 +24,6 @@ function PatientDetail() {
     }
   }, [patient]);
 
-  console.log(authorizationStatus)
 
   const handleSubmitRequest = (id, name) => {
     navigate('/PriorAuthorization', {state : {
